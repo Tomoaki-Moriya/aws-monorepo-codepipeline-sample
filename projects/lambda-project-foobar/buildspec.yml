@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      python: 3.13
+  build:
+    on-failure: ABORT
+    commands:
+      - sam package
+        - --template-file template.yml
+        - --output-template-file build.yml
+        - --s3-bucket "${ARTIFACT_S3_BUCKET_NAME}"
+artifacts:
+  files:
+    - "build.yml"
