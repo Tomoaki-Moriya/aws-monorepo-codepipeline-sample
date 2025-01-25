@@ -8,6 +8,7 @@ phases:
   build:
     on-failure: ABORT
     commands:
+      - cd projects/lambda-project-foo
       - sam package
         - --template-file template.yml
         - --output-template-file build.yml
