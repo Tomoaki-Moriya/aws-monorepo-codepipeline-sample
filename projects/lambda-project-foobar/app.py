@@ -1,5 +1,2 @@
-from logger import my_logger
-
-
 def lambda_handler(event, context):
-    my_logger.info("foobar")
+    print("foobar")
