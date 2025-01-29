@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: "AWS::Serverless-2016-10-31"
 Resources:
-  MyLambdaFunction:
+  Function:
     Type: "AWS::Serverless::Function"
     Properties:
       FunctionName: foo-function
@@ -10,9 +10,9 @@ Resources:
       CodeUri: .
       MemorySize: 128
       Timeout: 30
-      Role: !GetAtt LambdaExecutionRole.Arn
+      Role: !GetAtt Role.Arn
 
-  LambdaExecutionRole:
+  Role:
     Type: "AWS::IAM::Role"
     Properties:
       AssumeRolePolicyDocument:
