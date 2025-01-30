@@ -8,9 +8,8 @@ phases:
   build:
     on-failure: ABORT
     commands:
-      - cd projects/lambda-project-foobar
       - sam package
-        - --template-file template.yml
+        - --template-file projects/lambda-project-foobar/template.yml
         - --output-template-file build.yml
         - --s3-bucket "${ARTIFACT_S3_BUCKET_NAME}"
 artifacts:

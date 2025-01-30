@@ -8,7 +8,6 @@ phases:
   build:
     on-failure: ABORT
     commands:
-      - echo "$(pwd)"
       - sam package
         - --template-file projects/lambda-project-foo/template.yml
         - --output-template-file build.yml
